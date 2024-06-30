@@ -13,6 +13,7 @@ formulario.addEventListener("submit", (e) => {
         "cpf": e.target.elements["cpf"].value,
         "aniversario": e.target.elements["aniversario"].value,
     }
+
     localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
 
     window.location.href = "./abrir-conta-form-2.html";
@@ -40,7 +41,7 @@ const mensagens = {
     email: {
         valueMissing: "O campo de e-mail não pode estar vazio.",
         typeMismatch: "Por favor, preencha um email válido.",
-        tooShort: "Por favor, preencha um e-mail válido."
+        tooShort: "Por favor, preencha um email válido."
     },
     rg: {
         valueMissing: "O campo de RG não pode estar vazio.",
@@ -77,7 +78,6 @@ function verificaCampo(campo) {
             console.log(mensagem);
         }
     })
-
     const mensagemErro = campo.parentNode.querySelector('.mensagem-erro');
     const validadorDeInput = campo.checkValidity();
 
